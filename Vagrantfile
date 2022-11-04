@@ -5,7 +5,10 @@ ENV["TERM"]="linux"
 Vagrant.require_version ">= 2.2.10"
 Vagrant.configure("2") do |config|
   config.vm.provision "shell",
-    inline: "sudo su - && zypper update && zypper install -y apparmor-parser"
+    inline: "sudo su - && zypper update && zypper install -y apparmor-parser" 
+    "sudo app-get update"
+    "sudo apt install vim"
+  
   
   # Set the image for the vagrant box
   config.vm.box = "opensuse/Leap-15.2.x86_64"
